@@ -1,0 +1,149 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+ class Animal{
+    int X_position;
+    int Y_position;
+    void RandomWalk(){};
+    void Voice(){};
+    void WorkToDo(){};
+    boolean Live;
+    int SizaInWareHouse;
+}
+
+ class AnimalIncubator extends Labratory{
+}
+ class Bank {
+    int Coin;
+    void Buy(){};
+    void Sell(){};
+}
+class Cage {
+    int Level;
+    void TimeToDo(){};
+    void WorkToDo(){};
+}
+class CakeBakery extends Labratory{
+}
+class CookieBakery extends Labratory{
+}
+ class DefenderAnimal extends Animal{
+
+    void WorkToDo()
+
+
+}
+ class DomesticAnimal extends Animal{
+    void Eating(){};
+    void NeedWater(){};
+    void FindGrass(){};
+}
+class EggPowderPlant extends Labratory{
+}
+class Farm {
+    void PutGrass(){};
+}
+ class Grass {
+    int X_position;
+    int Y_position;
+    int MaxPower;
+    void Power(){};
+}
+class Helicopter extends TransformVehicle{
+     void TypeOfWork()
+       void TimeToDo()
+       void Voice()
+
+}
+class Hen extends DomesticAnimal{
+
+    void WorkToDo()
+        super.WorkToDo();
+
+}
+class Labratory {
+    int X_Positin;
+    int Y_Position;
+    int Level;
+    void WorkToDo(){};
+    void TimeToDo(){};
+    int InitialPrice(){
+        return this.Level;
+    };
+}
+class Lion extends WildAnimal {
+
+    void WorkToDo()
+
+}
+class Motor extends TransformVehicle{
+    void TypeOfWork()
+    void TimeToDo()
+    void Voice()
+}
+ class Product {
+    //  one Arraylist for each of the products includes egg,feather,wool,lion,bear,cake,cookie,powder1,powder2
+}
+
+
+ class Shop {
+    int X_position;
+    int Y_position;
+    int HenCounter;
+    int OstrichCounter;
+    //TODO
+}
+ class Spinnery extends Labratory{
+}
+class TransformVehicle {
+    int Capacity;
+    int X_Positin;
+    int Y_Position;
+    void TypeOfWork(){};
+    void TimeToDo(){};
+    void Voice(){};
+}
+
+
+ class WareHouse {
+    int Level;
+  static final   int Capacity = 200;
+    int CapacityCounter;
+    ArrayList<Product> Product=new ArrayList<>();
+    ArrayList<Product> RecentlySold=new ArrayList<>();
+    boolean CanSellOrStore(){
+        return true;
+    };
+    void Sell(){};
+}
+ class WeavingFactory extends Labratory{
+}
+ class WildAnimal extends Animal {
+    void RandomX_Y(){};
+    void Attack(){};
+    void BreakingCage(){};
+}
+
+ class Sheep extends DomesticAnimal{
+}
+class Ostrich extends DomesticAnimal{
+}
+class Dog extends DefenderAnimal{
+}
+class Cow extends DomesticAnimal{
+}
+ class Cat extends DefenderAnimal{
+}
+class Bear extends WildAnimal{
+}
+WareHouse *--  Bank
+WareHouse *--  Product
+Product *--  Bank
+Bank *--  WareHouse
+Product *--  WareHouse
+Bank *--  Product
+Farm *-- Grass
+WildAnimal *-- Cage
+Product *-- Shop
+Bank *-- Shop
+@enduml
